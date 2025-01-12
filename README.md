@@ -44,4 +44,4 @@ python src/benchmark.py
 - Performance:
   - The parallel implementation is designed to scale with the number of workers.
   - The generated speedup graph shows the performance improvement.
--Visualization: The graph is saved as results/speedup_plot.png.
+- Visualization: The graph is saved as results/speedup_plot.png.
