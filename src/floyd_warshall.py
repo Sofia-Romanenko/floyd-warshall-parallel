@@ -1,4 +1,9 @@
+import numpy as np
+
 def floyd_warshall(matrix):
+    """
+    Non-parallel implementation of the Floyd-Warshall algorithm.
+    """
     n = len(matrix)
     dist = matrix.copy()
     for k in range(n):
