@@ -117,6 +117,9 @@ The execution time plot compares the time taken by the non-parallel and CUDA imp
 - **Y-axis**: Execution time (in seconds).
 - **Insights**:
   - The CUDA implementation is consistently faster, especially as the graph size increases.
+ ![Execution Time Plot](results/execution_time_plot.png)
+
+
 
 ### **Graph 2: Speedup**
 The speedup plot highlights how much faster the CUDA implementation is compared to the non-parallel version.
@@ -125,6 +128,7 @@ The speedup plot highlights how much faster the CUDA implementation is compared 
 - **Y-axis**: Speedup (\( \text{Non-parallel Time} / \text{CUDA Time} \)).
 - **Insights**:
   - The speedup increases as the graph size grows, demonstrating the scalability of the GPU-based solution.
+  ![Speedup Plot](results/speedup_plot.png)
 
 Both graphs are saved in the `results/` folder:
 - `execution_time_plot.png`
