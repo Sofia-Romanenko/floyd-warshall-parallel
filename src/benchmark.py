@@ -8,12 +8,13 @@ from floyd_warshall_parallel import floyd_warshall_parallel
 def generate_random_matrix(n=500, p=0.5, weight_range=(1, 100)):
     np.random.seed(42)  # For reproducibility
     matrix = np.random.choice(
-        [np.inf, np.random.randint(weight_range[0], weight_range[1) + 1)],
+        [np.inf, np.random.randint(weight_range[0], weight_range[1] + 1)],
         size=(n, n),
-        p=[1 - p, p],
+        p=[1 - p, p],  # Probability distribution
     )
     np.fill_diagonal(matrix, 0)  # Distance to self is always 0
     return matrix
+
 
 # Main benchmark script
 if __name__ == "__main__":
