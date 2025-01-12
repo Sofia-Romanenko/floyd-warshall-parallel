@@ -1,9 +1,12 @@
-# Floyd-Warshall Algorithm: Non-Parallel vs CUDA Implementation
+# Floyd-Warshall Algorithm: Comparing Non-Parallel and CUDA Implementations
 
 ## Project Overview
-This repository implements and compares two versions of the Floyd-Warshall algorithm:
-1. **Non-parallel implementation**: A sequential Python implementation.
-2. **CUDA implementation**: A parallelized version written in C++ using NVIDIA CUDA to leverage GPU acceleration.
+
+This repository implements the Floyd-Warshall algorithm using two approaches:
+1. **Non-parallel implementation**: A sequential version written in Python.
+2. **CUDA implementation**: A GPU-accelerated version written in C++ using NVIDIA CUDA.
+
+The project compares the performance of these implementations in terms of execution time and speedup, visualized through graphs.
 
 ---
 
@@ -47,10 +50,31 @@ CUDA was selected because it offers the **best performance for matrix-heavy task
 
 ---
 
+## Purpose of the Project
+
+The goal is to analyze the performance difference between a CPU-based sequential algorithm and a GPU-based parallel implementation. The Floyd-Warshall algorithm, with its \(O(n^3)\) complexity, is a computationally intensive task well-suited for demonstrating the advantages of parallelization using CUDA.
+
+### Key Objectives:
+1. **Performance Comparison**:
+   - Measure execution time for both implementations on graphs of varying sizes.
+   - Evaluate the scalability of each approach as the graph size increases.
+
+2. **Speedup Visualization**:
+   - Calculate the speedup (\( \text{Speedup} = \frac{\text{Time(Non-parallel)}}{\text{Time(CUDA)}} \)) to quantify the benefits of GPU acceleration.
+
+---
+
 ## Features
-- **Non-Parallel Version**: A simple Python implementation for baseline performance.
-- **CUDA Version**: Optimized C++ implementation with GPU acceleration.
-- **Speedup Visualization**: The project includes a speedup plot that compares the non-parallel and CUDA versions.
+
+- **Non-Parallel Implementation**:
+  - A simple sequential Python implementation for baseline performance.
+
+- **CUDA Implementation**:
+  - A parallel version leveraging thousands of GPU cores for efficient computation.
+
+- **Graph Visualization**:
+  - Execution Time Plot: Shows the time taken by each implementation for different graph sizes.
+  - Speedup Plot: Illustrates the relative improvement in performance of the CUDA implementation.
 
 ---
 
@@ -85,8 +109,25 @@ python src/benchmark.py
 ---
 
 ## Results
-The benchmark script will:
 
-- Run the non-parallel version.
-- Run the CUDA version.
-- Plot the speedup graph, saved as results/speedup_plot.png.
+### **Graph 1: Execution Time**
+The execution time plot compares the time taken by the non-parallel and CUDA implementations for varying graph sizes (\(n\)).
+
+- **X-axis**: Graph size (\(n\)).
+- **Y-axis**: Execution time (in seconds).
+- **Insights**:
+  - The CUDA implementation is consistently faster, especially as the graph size increases.
+
+### **Graph 2: Speedup**
+The speedup plot highlights how much faster the CUDA implementation is compared to the non-parallel version.
+
+- **X-axis**: Graph size (\(n\)).
+- **Y-axis**: Speedup (\( \text{Non-parallel Time} / \text{CUDA Time} \)).
+- **Insights**:
+  - The speedup increases as the graph size grows, demonstrating the scalability of the GPU-based solution.
+
+Both graphs are saved in the `results/` folder:
+- `execution_time_plot.png`
+- `speedup_plot.png`
+
+---
