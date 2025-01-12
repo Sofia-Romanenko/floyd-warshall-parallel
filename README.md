@@ -1,26 +1,26 @@
-# Floyd-Warshall Algorithm: Parallel and Non-Parallel Implementations
+# Floyd-Warshall Algorithm: Non-Parallel vs CUDA Implementation
 
 ## Project Overview
-This repository contains implementations of the Floyd-Warshall algorithm:
-1. **Non-parallel version**: A sequential implementation for baseline comparison.
-2. **Parallel version**: A faster implementation using Python's `multiprocessing` library.
+This repository compares the performance of:
+1. **Non-parallel implementation**: Written in Python.
+2. **CUDA implementation**: Written in C++ using CUDA for GPU acceleration.
 
-The input graph is dynamically generated as an adjacency matrix with random weights.
+The input graph is generated dynamically as an adjacency matrix with random weights.
 
 ---
 
 ## Features
-- **Parallelization**: The parallel implementation processes rows of the adjacency matrix in parallel.
-- **Benchmarking**: Compares the performance of both implementations and generates a speedup graph.
+- **Non-Parallel Version**: Simple Python implementation for baseline performance.
+- **CUDA Version**: Optimized GPU implementation for high-speed computation.
+- **Benchmark**: Compares the execution time and calculates speedup.
 
 ---
 
-## How to Use
+## How to Run
 
-### 1. Clone the Repository
+### 1. Compile the CUDA version
 ```bash
-git clone https://github.com/<your-username>/floyd-warshall-parallel.git
-cd floyd-warshall-parallel
+nvcc src/floyd_warshall_cuda.cu -o floyd_warshall_cuda
 ```
 
 ### 2. Install Dependencies
@@ -40,8 +40,4 @@ python src/benchmark.py
 ---
 
 ## Results
-- Input Data: The script dynamically generates a random graph with customizable size and density.
-- Performance:
-  - The parallel implementation is designed to scale with the number of workers.
-  - The generated speedup graph shows the performance improvement.
-- Visualization: The graph is saved as results/speedup_plot.png.
+- The benchmark script will display the execution time for both implementations and the calculated speedup
