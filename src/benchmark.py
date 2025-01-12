@@ -5,7 +5,7 @@ from floyd_warshall import floyd_warshall
 from floyd_warshall_parallel import floyd_warshall_parallel
 
 # Function to generate a random adjacency matrix
-def generate_random_matrix(n=500, p=0.5, weight_range=(1, 100)):
+def generate_random_matrix(n=100, p=0.5, weight_range=(1, 100)):
     np.random.seed(42)  # For reproducibility
     matrix = np.random.choice(
         [np.inf, np.random.randint(weight_range[0], weight_range[1] + 1)],
